@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swadcast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+    }
+
+    #swadcast {
+      font-size: 3rem;
+      color: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .threeD-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="threeD-container"></div>
+  <h1 id="swadcast">HAPPY BIRTHDAY SAALEYO!!!</h1>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fonts = ['Roboto', 'Orbitron', 'Montserrat'];
+      const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+      const swadcastText = document.getElementById('swadcast');
+
+      swadcastText.style.fontFamily = randomFont;
+
+      const glowColors = ['red', 'blue', 'green', 'yellow', 'purple'];
+      const randomGlowColor = glowColors[Math.floor(Math.random() * glowColors.length)];
+
+      swadcastText.style.textShadow = `0 0 10px ${randomGlowColor}, 0 0 20px ${randomGlowColor}, 0 0 30px ${randomGlowColor}, 0 0 40px ${randomGlowColor}`;
+    });
+  </script>
+</body>
+</html>
